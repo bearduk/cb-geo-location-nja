@@ -9,9 +9,12 @@ var config = {
     databaseURL: "https://cb-geo-location-nja.firebaseio.com",
     projectId: "cb-geo-location-nja",
     storageBucket: "cb-geo-location-nja.appspot.com",
-    messagingSenderId: "853165756064"
+    messagingSenderId: "853165756064",
+    timestampsInSnapshots: true
   };
 
 const firebaseApp =  firebase.initializeApp(config);
+
+firebaseApp.firestore().settings({timestampsInSnapshots: true});
 
 export default firebaseApp.firestore()
