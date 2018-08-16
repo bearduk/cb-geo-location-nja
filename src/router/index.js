@@ -8,7 +8,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Navbar',
+      name: 'HelloWorld',
       component: HelloWorld
     }
   ]
