@@ -22,7 +22,7 @@ export default {
                 center:{
                     lat: this.lat, lng: this.lng
                 },
-                zoom: 18,
+                zoom: 16,
                 maxZoom: 20,
                 minZoom: 3,
                 streetViewControl: false
