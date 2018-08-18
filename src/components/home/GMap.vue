@@ -33,7 +33,7 @@ export default {
     mounted(){
         // get current user
         let user = firebase.auth().currentUser;
-        console.log('id is ' + user.uid);
+        // console.log('id is ' + user.uid);
 
         // so cycle through records where user.user_id = 
         
@@ -48,7 +48,7 @@ export default {
                 db.collection('users').where( 'user_id', '==', user.uid  ).get()
                 .then( snapshot => {
                     snapshot.forEach((doc) => {
-                        console.log('user_id: ' + doc.id + ' looked up using user.uid: ' + user.uid);
+                        // console.log('user_id: ' + doc.id + ' looked up using user.uid: ' + user.uid);
 
                         // still in the foreach even though only one item probably, now update
                         db.collection('users').doc(doc.id).update({
