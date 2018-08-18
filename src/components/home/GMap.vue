@@ -40,7 +40,7 @@ export default {
                                 lat: data.geolocation.lat,
                                 lng: data.geolocation.lng
                             },
-                            map // Or map: map
+                            map
                         })
                         // add click event to server
                         marker.addEventListener('click', () => {
