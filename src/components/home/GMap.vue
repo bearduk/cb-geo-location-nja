@@ -28,6 +28,28 @@ export default {
                 minZoom: 3,
                 streetViewControl: false
             })
+
+            db.collection('user').get()
+            .then(users => {
+                users.docs.forEach( doc => {
+                    let data = doc.data()
+                    if(data.geolocation){
+                        // create the marker
+                        let marker = new google.maps.Marker({
+                            position: {
+                                lat: data.geolocation.lat,
+                                lng: data.geolocation.lng
+                            },
+                            map // Or map: map
+                        })
+                        // add click event to server
+                        marker.addEventListener('click', () => {
+                            console.log(doc.id);
+                            
+                        })
+                    }
+                })
+            })
         }
     },
     mounted(){
@@ -67,7 +89,7 @@ export default {
             }, (err)=> {
                 console.log(err)
                 this.renderMap()
-            }, {maximumAge: 60000, timeout: 3000 })
+            }, {maximumAge: 60000, timeout: 4000 })
         } else {
             // position centre by default values
             this.renderMap()
