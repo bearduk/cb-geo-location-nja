@@ -29,7 +29,7 @@ export default {
                 streetViewControl: false
             })
 
-            db.collection('user').get()
+            db.collection('users').get()
             .then(users => {
                 users.docs.forEach( doc => {
                     let data = doc.data()
@@ -43,9 +43,8 @@ export default {
                             map
                         })
                         // add click event to server
-                        marker.addEventListener('click', () => {
-                            console.log(doc.id);
-                            
+                        marker.addListener('click', () => {
+                            console.log('doc.id is ' + doc.id);
                         })
                     }
                 })
