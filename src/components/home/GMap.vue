@@ -26,7 +26,7 @@ export default {
                 zoom: 16,
                 maxZoom: 20,
                 minZoom: 3,
-                streetViewControl: false
+                streetViewControl: true
             })
 
             db.collection('users').get()
