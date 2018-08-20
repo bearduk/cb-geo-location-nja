@@ -23,9 +23,9 @@ export default {
                 center:{
                     lat: this.lat, lng: this.lng
                 },
-                zoom: 16,
+                zoom: 8,
                 maxZoom: 20,
-                minZoom: 3,
+                minZoom: 2,
                 streetViewControl: true
             })
 
@@ -42,9 +42,10 @@ export default {
                             },
                             map
                         })
-                        // add click event to server
+                        // add click event to server. Note addListener is google maps API, not the JS addEVENTlistener
                         marker.addListener('click', () => {
                             console.log('doc.id is ' + doc.id);
+                            this.$router.push({name: 'ViewProfile', params: {id: doc.id} })
                         })
                     }
                 })
